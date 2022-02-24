@@ -1,0 +1,85 @@
+// Full-size Header
+body:not(.page) {
+	header {
+		display:flex;
+		flex-direction:column;
+		align-items:center;
+		width:100%;
+
+		p { font-size:0.875rem; text-align:center; }
+
+		@media screen and (min-width:48em) {
+			p {
+				letter-spacing:3px;
+				text-transform:uppercase;
+			}
+		}
+	}
+	.site-logo {
+		margin:unset;
+		max-width:600px;
+		width:100%;
+		text-indent:-999em;
+	}
+	.site-logo a {
+		background:url('https://intothebook.net/wp-content/uploads/2022/02/mainlogo-dark.svg') no-repeat center center;
+		background-size:contain;
+		display:block;
+		height:0;
+		padding-block-start:22%;
+		position:relative;
+		width:100%;
+	}
+
+	@media (prefers-color-scheme: dark) {
+		header .site-logo a { background-image:url('https://intothebook.net/wp-content/uploads/2022/02/mainlogo.svg'); }
+
+		header p { color:#fff; }
+	}
+}
+
+
+// VS Min
+body.page {
+	header {
+		padding:0 2vw;
+		text-align:center;
+		a {
+			background:url(https://intothebook.net/wp-content/uploads/2022/02/logo.svg) no-repeat center center;
+			background-color: var(--primary);
+			background-size:85%;
+			color:transparent;
+			display:inline-block;
+			margin:0 auto;
+			overflow:hidden;
+			transition:0.2s all;
+
+			&:hover { background-color:var(--primary); }
+		}
+
+		p { display: none; }
+	}
+}
+
+
+header p, footer p,
+.simple-banner span,
+p.post-info {
+	color:var(--quiet);
+	font-family: sofia-pro, sans-serif;
+	font-size:1rem;
+	font-weight:300;
+}
+
+
+.simple-banner {
+	background:hsla(0,0%,100%,0.1);
+
+	div.simple-banner-text {
+		span, a { color:var(--textcolor); }
+	}
+
+	button { color:var(--tertiary);
+		&:hover { color:#fff; }
+	}
+}

@@ -1,0 +1,61 @@
+
+
+body.single {
+	main {
+		margin: 0 auto;
+		transition: 0.3s all;
+		width: var(--max-width);
+
+
+		h1 { line-height:1.05; font-size:3rem; color:var(--quiet); }
+		.post-info { margin-bottom: 2vw; }
+
+		.post-info date { margin-right: 2vw; }
+
+		@media screen and (min-width:48em) {
+			h1 { font-size:5rem; }
+		}
+	}
+
+	&.has-featured-image {
+		position:relative;
+		main { position:static; }
+		main:before {
+			content:'';
+			background-size:cover;
+			height:100vh;
+			opacity:1;
+			position:absolute;
+			inset-inline-start: 0;
+			inset-inline-end: 0;
+			inset-block-start: 0;
+		z-index:-2;
+		}
+		main:after {
+			content:'';
+			background:#f00;
+			background: linear-gradient(0deg, var(--background) 8%, transparent 100%);
+			height:100vh;
+			position:absolute;
+				inset-inline-start:0;
+				inset-inline-end:0;
+				inset-block-start:0;
+			z-index:-1;
+		}
+	}
+
+}
+
+.post-info date, .post-info label {
+	color: var(--quaternary);
+}
+
+blockquote {
+	font-size:125%;
+}
+cite {
+	font-family:'sofia-pro', san-serif;
+	color:var(--textcolor);
+	font-size:1rem;
+	font-style:normal;
+}

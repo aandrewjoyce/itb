@@ -1,0 +1,131 @@
+p.her strong {
+	background:var(--tertiary);
+	border-radius:6px;
+	color:#fff;
+	display:inline-block;
+	font-family:'sofia-pro', sans-serif;
+	font-weight:200;
+	font-size:1rem;
+	padding:6px 12px;
+	position:relative;
+
+	&:after {
+		content:'';
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 6px 5px 0 5px;
+		border-color: var(--tertiary) transparent transparent transparent;
+		position:absolute;
+			inset-inline-end:18px;
+			inset-block-end:-5px;
+	}
+}
+
+p.me strong {
+	background:#02b2eb;
+	border-radius:6px;
+	color:#fff;
+	display:inline-block;
+	font-family:'sofia-pro', sans-serif;
+	font-weight:200;
+	font-size:1rem;
+	padding:6px 12px;
+	position:relative;
+
+	&:after {
+		content:'';
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 0 5px 6px 5px;
+		border-color: transparent transparent #02b2eb transparent;
+		position:absolute;
+		inset-inline-start:18px;
+		inset-block-start:-5px;
+	}
+}
+
+body.postid-4092 {
+
+	.head15 {
+		background:var(--background-quiet);
+		min-height:50vh;
+		display:flex;
+		letter-spacing:2px;
+		align-items:center;
+		justify-content:center;
+	}
+
+	@media screen and (min-width:80em) {
+		figure.wp-block-gallery {
+			height: 2px;
+			position:relative;
+
+			& > figure { position:relative; }
+			figure img {
+				min-height:30vw;
+				position: absolute !important;
+					inset-inline-start:calc(-100% - 30px);
+					inset-block-start:-100px;
+			}
+			figure:nth-child(2) img { inset-inline-start:unset; inset-inline-end:calc(-100% - 30px);}
+		}
+	}
+
+}
+
+body.postid-4256 .has-luminous-vivid-orange-color {
+	position:relative;
+	padding-left:70px;
+	&:before {
+		content:'';
+		background:url(https://intothebook.net/wp-content/uploads/2022/02/200.gif) left center;
+		background-repeat:no-repeat;
+		background-size:cover;
+		display:block;
+		filter:hue-rotate(140deg);
+		height:36px;
+		position:absolute;
+		inset-inline-start:-8px;
+		inset-block-start:0;
+		width:64px;
+	}
+}
+body.postid-4256 .has-luminous-vivid-amber-color {
+	position:relative;
+	padding-left:70px;
+	&:before {
+		content:'';
+		background:url(https://intothebook.net/wp-content/uploads/2022/02/200.gif) left center;
+		background-repeat:no-repeat;
+		background-size:cover;
+		display:block;
+		filter:hue-rotate(170deg);
+		height:36px;
+		position:absolute;
+		inset-inline-start:4px;
+		inset-block-start:0;
+		transform:scaleX(-1);
+		width:64px;
+	}
+}
+
+
+body.postid-4063 {
+	h3 {
+		font-size:120%;
+		margin:3vw 0;
+		text-transform:lowercase;
+	}
+
+	.email {
+		padding:0.5rem 1rem;
+		background:var(--background-quiet);
+		border-radius:10px;
+
+		@media screen and (min-width:40em) {
+			padding:1rem 2.5rem;
+		}
+	}
+}

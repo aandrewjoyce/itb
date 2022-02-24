@@ -1,0 +1,52 @@
+footer {
+	align-items:center;
+	display:flex;
+	flex-wrap:wrap;
+	gap:5vw;
+	justify-content:flex-start;
+	padding-top:unset;
+}
+
+footer > p { min-width:30ch; width:auto; max-width:60ch; }
+
+.contact-card {
+	background:var(--background);
+	box-shadow:0 5px 10px hsla(0,0%,0%,0.02);
+	border:1px solid #f0f0f0;
+	border-radius:1px;
+	display:grid;
+	gap:var(--padding);
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows:auto;
+	grid-template-areas: 'photo photo'
+						 'title title'
+						 'text text'
+						 'webring webring';
+	max-width:70ch;
+	padding:var(--double-padding);
+
+	@media screen and (min-width:48em) {
+		grid-template-columns: 100px 1fr 1fr;
+		grid-template-areas: 'photo title title title'
+						 'photo text text text'
+						 'webring webring webring webring';
+	}
+
+	@media (prefers-color-scheme: dark) {
+		border-color:hsla(0,0%,100%,0.05);
+	}
+
+}
+
+.u-photo { grid-area:photo; border-radius:100px; }
+.card-title { grid-area:title; margin:unset; margin-top:4px; }
+.p-note { grid-area:text; margin:unset; }
+.webring {
+	border-top:1px solid hsla(0,0%,0%,0.08);
+	color: var(--quiet);
+	font-family: sofia-pro, sans-serif;
+	font-size:0.875rem;
+	grid-area:webring;
+	padding-top:var(--padding);
+	text-align:center;
+}

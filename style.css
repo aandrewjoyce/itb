@@ -1,0 +1,693 @@
+/*
+Theme Name: Into the Book
+Theme URI: https://intothebook.net
+Description: Andrew's 2022 ItB theme
+Version: 1.0
+Author: Andrew Joyce
+Author URI: https://mereagency.com
+Text Domain: itb
+*/
+@import url("https://use.typekit.net/mvs2ihz.css");
+:root {
+  --background: hsla(0,0%,100%,1);
+  --background-shadow:hsla(0,0%,100%,0.1);
+  --background-quiet: #ebf2ef;
+  --bg-gradient: linear-gradient(0deg, var(--background-quiet) 10%, var(--background-shadow) 100%);
+  --quiet: #444;
+  --textcolor: #121212;
+  --secondarytext: #8c9795;
+  --primary-light: hsl( 175,43%,65% );
+  --primary-shadow: hsla( 175,43%,45%,0.2 );
+  --primary: hsl(175,67%,24%);
+  --secondary:#2f7552;
+  --tertiary:#33801a;
+  --quaternary:#6c7d19;
+  --quinary: #7a7a31;
+  --gold: #9e6c00;
+  --padding:1rem;
+  --double-padding:2rem;
+  --max-width:90vw;
+}
+@media screen and (min-width: 48em) {
+  :root {
+    --max-width:80vw;
+  }
+}
+@media screen and (min-width: 80em) {
+  :root {
+    --max-width:60vw;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background:#181a19;
+    --background-shadow:hsla(150,8%,9%,0.1);
+    --background-quiet: #1e2421;
+    --quiet: hsl(0,0%,70%);
+    --textcolor: #fff;
+    --secondarytext: #ced9d9;
+    --primary: hsl( 175,43%,45% );
+    --secondary: #3d996b;
+    --tertiary:#55b336;
+    --quaternary:#98b312;
+    --quinary: #cccc0a;
+    --gold: #d9a50b;
+  }
+
+  body {
+    background: var(--background);
+  }
+  body a {
+    color: var(--primary-light);
+  }
+}
+footer, header, main {
+  padding: 5vw;
+}
+
+body {
+  font-family: adobe-caslon-pro, serif;
+  font-size: 120%;
+  font-weight: 400;
+  line-height: 1.6;
+  margin: unset;
+  padding: unset;
+  overflow-x: hidden;
+}
+
+body:not(.page-template-page-image):not(.single.has-featured-image) main {
+  position: static;
+}
+body:not(.page-template-page-image):not(.single.has-featured-image) main:before {
+  background-color: var(--background);
+  background: url("https://intothebook.net/wp-content/uploads/2022/02/bg-light-scaled.jpg") center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  content: "";
+  opacity: 1;
+  position: absolute;
+  height: 140vh;
+  inset-inline-start: 0;
+  inset-inline-end: 0;
+  inset-block-start: 0;
+  z-index: -2;
+}
+@media (prefers-color-scheme: dark) {
+  body:not(.page-template-page-image):not(.single.has-featured-image) main:before {
+    background-image: url("https://intothebook.net/wp-content/uploads/2022/02/bg-dark.jpg");
+  }
+}
+body:not(.page-template-page-image):not(.single.has-featured-image) main:after {
+  content: "";
+  background: linear-gradient(0deg, var(--background) 8%, transparent 100%);
+  height: 140vh;
+  position: absolute;
+  inset-inline-start: 0;
+  inset-inline-end: 0;
+  inset-block-start: 0;
+  z-index: -1;
+}
+
+* {
+  box-sizing: border-box;
+  transition: 0.25s all;
+}
+
+a {
+  color: var(--primary);
+}
+
+p,
+ul,
+ol {
+  color: var(--textcolor);
+  line-height: 1.75;
+}
+@media screen and (min-width: 48em) {
+  p,
+ul,
+ol {
+    font-size: 110%;
+  }
+}
+
+h1, .site-logo {
+  color: var(--primary);
+  font-family: sofia-pro, sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-decoration: unset;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--secondarytext);
+  font-family: sofia-pro, sans-serif;
+  font-weight: 700;
+}
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  color: var(--secondarytext);
+  text-decoration: underline;
+  text-decoration-color: var(--primary-shadow);
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: 4px;
+}
+
+h2 {
+  font-weight: 900;
+}
+
+h3, .more-link {
+  text-transform: uppercase;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+.more-link {
+  color: var(--gold);
+  display: inline-block;
+  font-family: sofia-pro, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  position: relative;
+  text-decoration: unset;
+  transition: 0.3s all;
+}
+.more-link:before {
+  content: "";
+  background: var(--gold);
+  height: 3px;
+  opacity: 0.2;
+  width: 0;
+  position: absolute;
+  inset-inline-start: 0;
+  inset-inline-end: 0;
+  inset-block-end: -2px;
+  transition: 0.1s all;
+}
+.more-link:after {
+  content: "";
+  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMCIgaGVpZ2h0PSIyMSI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBmaWxsPSIjRDlBNTBCIiBkPSJtMTcuNjkgMi44MDQgNS4yMTEgNS44MzJILjk0M3YzLjcwN2gyMS44NUwxNy42OSAxOC42N2wyLjAwNyAyLjAyNEwyOS45MiAxMC40MzYgMTkuNjk3LjE3NyAxNy42OSAyLjgwNFoiLz48L3N2Zz4=") no-repeat center center;
+  background-size: contain;
+  margin-inline-start: 5px;
+  position: absolute;
+  inset-block-end: 2px;
+  width: 20px;
+  height: 20px;
+}
+.more-link:hover {
+  transform: scale(1.035);
+}
+.more-link:hover:before {
+  width: 100%;
+}
+
+figcaption {
+  color: var(--quiet);
+  font-family: sofia-pro, sans-serif;
+  font-size: 1rem;
+}
+
+footer {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5vw;
+  justify-content: flex-start;
+  padding-top: unset;
+}
+
+footer > p {
+  min-width: 30ch;
+  width: auto;
+  max-width: 60ch;
+}
+
+.contact-card {
+  background: var(--background);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.02);
+  border: 1px solid #f0f0f0;
+  border-radius: 1px;
+  display: grid;
+  gap: var(--padding);
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: "photo photo" "title title" "text text" "webring webring";
+  max-width: 70ch;
+  padding: var(--double-padding);
+}
+@media screen and (min-width: 48em) {
+  .contact-card {
+    grid-template-columns: 100px 1fr 1fr;
+    grid-template-areas: "photo title title title" "photo text text text" "webring webring webring webring";
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .contact-card {
+    border-color: rgba(255, 255, 255, 0.05);
+  }
+}
+
+.u-photo {
+  grid-area: photo;
+  border-radius: 100px;
+}
+
+.card-title {
+  grid-area: title;
+  margin: unset;
+  margin-top: 4px;
+}
+
+.p-note {
+  grid-area: text;
+  margin: unset;
+}
+
+.webring {
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  color: var(--quiet);
+  font-family: sofia-pro, sans-serif;
+  font-size: 0.875rem;
+  grid-area: webring;
+  padding-top: var(--padding);
+  text-align: center;
+}
+
+body:not(.page) header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+body:not(.page) header p {
+  font-size: 0.875rem;
+  text-align: center;
+}
+@media screen and (min-width: 48em) {
+  body:not(.page) header p {
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+}
+body:not(.page) .site-logo {
+  margin: unset;
+  max-width: 600px;
+  width: 100%;
+  text-indent: -999em;
+}
+body:not(.page) .site-logo a {
+  background: url("https://intothebook.net/wp-content/uploads/2022/02/mainlogo-dark.svg") no-repeat center center;
+  background-size: contain;
+  display: block;
+  height: 0;
+  padding-block-start: 22%;
+  position: relative;
+  width: 100%;
+}
+@media (prefers-color-scheme: dark) {
+  body:not(.page) header .site-logo a {
+    background-image: url("https://intothebook.net/wp-content/uploads/2022/02/mainlogo.svg");
+  }
+  body:not(.page) header p {
+    color: #fff;
+  }
+}
+
+body.page header {
+  padding: 0 2vw;
+  text-align: center;
+}
+body.page header a {
+  background: url(https://intothebook.net/wp-content/uploads/2022/02/logo.svg) no-repeat center center;
+  background-color: var(--primary);
+  background-size: 85%;
+  color: transparent;
+  display: inline-block;
+  margin: 0 auto;
+  overflow: hidden;
+  transition: 0.2s all;
+}
+body.page header a:hover {
+  background-color: var(--primary);
+}
+body.page header p {
+  display: none;
+}
+
+header p, footer p,
+.simple-banner span,
+p.post-info {
+  color: var(--quiet);
+  font-family: sofia-pro, sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.simple-banner {
+  background: rgba(255, 255, 255, 0.1);
+}
+.simple-banner div.simple-banner-text span, .simple-banner div.simple-banner-text a {
+  color: var(--textcolor);
+}
+.simple-banner button {
+  color: var(--tertiary);
+}
+.simple-banner button:hover {
+  color: #fff;
+}
+
+body.home main {
+  display: flex;
+  flex-direction: column;
+  gap: 2vw;
+  margin: 0 auto;
+  margin-bottom: 2vw;
+  max-width: var(--max-width);
+}
+body.home main article:first-of-type {
+  border-radius: 1px;
+  grid-column: span 4;
+  align-self: center;
+  justify-self: center;
+}
+body.home main article:first-of-type h2 {
+  line-height: 1;
+  margin-top: unset;
+}
+body.home main article:first-of-type h2 a {
+  text-decoration: unset;
+}
+@media screen and (min-width: 48em) {
+  body.home main article:first-of-type {
+    background: var(--bg-gradient);
+    padding: 4vw 5vw;
+  }
+  body.home main article:first-of-type h2 {
+    font-size: 300%;
+    text-decoration-skip-ink: all;
+  }
+  body.home main article:first-of-type p:not(.post-info) {
+    font-size: 120%;
+    max-width: 65ch;
+  }
+}
+@media (prefers-color-scheme: light) {
+  body.home main article:first-of-type h2 a {
+    color: var(--quiet);
+  }
+}
+body.home main article:not(:first-of-type) h2 {
+  line-height: 1.1;
+  margin-bottom: 0.25em;
+}
+body.home main article:not(:first-of-type) h2:after {
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MiIgaGVpZ2h0PSIzNiI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBmaWxsPSIjNDJBNjlEIiBkPSJNMjkuMzE3IDQuMzQgMzkuODc2IDE0LjlILjUxOXY2LjIwN2gzOS4xNjVMMjkuMzE3IDMxLjQ3NGw0LjM1MiA0LjM1MiAxNy44NTUtMTcuOTE5TDMzLjY2OS4xbC00LjM1MiA0LjI0WiIvPjwvc3ZnPg==");
+  background-repeat: no-repeat;
+  background-size: contain;
+  content: "";
+  display: inline-block;
+  height: 20px;
+  margin-inline-start: var(--padding);
+  position: relative;
+  inset-block-start: 2px;
+  width: 36px;
+}
+body.home main article:not(:first-of-type):hover h2 a {
+  color: var(--textcolor);
+  text-decoration-color: var(--primary);
+}
+body.home main article:not(:first-of-type):hover date, body.home main article:not(:first-of-type):hover span {
+  color: var(--primary);
+}
+@media screen and (min-width: 48em) {
+  body.home main article:not(:first-of-type) {
+    background: var(--background-quiet);
+    margin-bottom: calc(var(--padding) * -1);
+    padding: 1vw 5vw 0;
+  }
+  body.home main article:not(:first-of-type):last-of-type {
+    padding-block-end: 2vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  body.home main {
+    gap: var(--padding);
+  }
+}
+
+main > * {
+  margin-top: unset;
+}
+
+body.page-template-page-image {
+  position: relative;
+}
+body.page-template-page-image main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5vw;
+  margin-top: 5vw;
+  min-height: 70vh;
+  position: static;
+}
+body.page-template-page-image main:before {
+  content: "";
+  background-size: cover;
+  filter: blur(8px);
+  opacity: 0.5;
+  position: fixed;
+  inset-inline-start: -20px;
+  inset-inline-end: -20px;
+  inset-block-start: -20px;
+  inset-block-end: -20px;
+  z-index: -2;
+}
+body.page-template-page-image article {
+  background: var(--background);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.02);
+  border-radius: 1px;
+  max-width: 90ch;
+  padding: 5vw;
+  position: relative;
+  width: 100%;
+}
+body.page-template-page-image article h1 {
+  color: var(--secondary);
+  mix-blend-mode: overlay;
+  font-size: 5rem;
+  font-weight: 200;
+  position: absolute;
+  inset-block-start: -10rem;
+  inset-inline-start: 0;
+  text-align: center;
+  transition: 0.3s all;
+  width: 100%;
+  z-index: -1;
+}
+@media screen and (min-width: 50em) {
+  body.page-template-page-image article h1 {
+    font-size: 10rem;
+    inset-block-start: -20.2rem;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  body.page-template-page-image article h1 {
+    color: #fff;
+  }
+}
+
+body.single main {
+  margin: 0 auto;
+  transition: 0.3s all;
+  width: var(--max-width);
+}
+body.single main h1 {
+  line-height: 1.05;
+  font-size: 3rem;
+  color: var(--quiet);
+}
+body.single main .post-info {
+  margin-bottom: 2vw;
+}
+body.single main .post-info date {
+  margin-right: 2vw;
+}
+@media screen and (min-width: 48em) {
+  body.single main h1 {
+    font-size: 5rem;
+  }
+}
+body.single.has-featured-image {
+  position: relative;
+}
+body.single.has-featured-image main {
+  position: static;
+}
+body.single.has-featured-image main:before {
+  content: "";
+  background-size: cover;
+  height: 100vh;
+  opacity: 1;
+  position: absolute;
+  inset-inline-start: 0;
+  inset-inline-end: 0;
+  inset-block-start: 0;
+  z-index: -2;
+}
+body.single.has-featured-image main:after {
+  content: "";
+  background: #f00;
+  background: linear-gradient(0deg, var(--background) 8%, transparent 100%);
+  height: 100vh;
+  position: absolute;
+  inset-inline-start: 0;
+  inset-inline-end: 0;
+  inset-block-start: 0;
+  z-index: -1;
+}
+
+.post-info date, .post-info label {
+  color: var(--quaternary);
+}
+
+blockquote {
+  font-size: 125%;
+}
+
+cite {
+  font-family: "sofia-pro", san-serif;
+  color: var(--textcolor);
+  font-size: 1rem;
+  font-style: normal;
+}
+
+p.her strong {
+  background: var(--tertiary);
+  border-radius: 6px;
+  color: #fff;
+  display: inline-block;
+  font-family: "sofia-pro", sans-serif;
+  font-weight: 200;
+  font-size: 1rem;
+  padding: 6px 12px;
+  position: relative;
+}
+p.her strong:after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 6px 5px 0 5px;
+  border-color: var(--tertiary) transparent transparent transparent;
+  position: absolute;
+  inset-inline-end: 18px;
+  inset-block-end: -5px;
+}
+
+p.me strong {
+  background: #02b2eb;
+  border-radius: 6px;
+  color: #fff;
+  display: inline-block;
+  font-family: "sofia-pro", sans-serif;
+  font-weight: 200;
+  font-size: 1rem;
+  padding: 6px 12px;
+  position: relative;
+}
+p.me strong:after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 5px 6px 5px;
+  border-color: transparent transparent #02b2eb transparent;
+  position: absolute;
+  inset-inline-start: 18px;
+  inset-block-start: -5px;
+}
+
+body.postid-4092 .head15 {
+  background: var(--background-quiet);
+  min-height: 50vh;
+  display: flex;
+  letter-spacing: 2px;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (min-width: 80em) {
+  body.postid-4092 figure.wp-block-gallery {
+    height: 2px;
+    position: relative;
+  }
+  body.postid-4092 figure.wp-block-gallery > figure {
+    position: relative;
+  }
+  body.postid-4092 figure.wp-block-gallery figure img {
+    min-height: 30vw;
+    position: absolute !important;
+    inset-inline-start: calc(-100% - 30px);
+    inset-block-start: -100px;
+  }
+  body.postid-4092 figure.wp-block-gallery figure:nth-child(2) img {
+    inset-inline-start: unset;
+    inset-inline-end: calc(-100% - 30px);
+  }
+}
+
+body.postid-4256 .has-luminous-vivid-orange-color {
+  position: relative;
+  padding-left: 70px;
+}
+body.postid-4256 .has-luminous-vivid-orange-color:before {
+  content: "";
+  background: url(https://intothebook.net/wp-content/uploads/2022/02/200.gif) left center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: block;
+  filter: hue-rotate(140deg);
+  height: 36px;
+  position: absolute;
+  inset-inline-start: -8px;
+  inset-block-start: 0;
+  width: 64px;
+}
+
+body.postid-4256 .has-luminous-vivid-amber-color {
+  position: relative;
+  padding-left: 70px;
+}
+body.postid-4256 .has-luminous-vivid-amber-color:before {
+  content: "";
+  background: url(https://intothebook.net/wp-content/uploads/2022/02/200.gif) left center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: block;
+  filter: hue-rotate(170deg);
+  height: 36px;
+  position: absolute;
+  inset-inline-start: 4px;
+  inset-block-start: 0;
+  transform: scaleX(-1);
+  width: 64px;
+}
+
+body.postid-4063 h3 {
+  font-size: 120%;
+  margin: 3vw 0;
+  text-transform: lowercase;
+}
+body.postid-4063 .email {
+  padding: 0.5rem 1rem;
+  background: var(--background-quiet);
+  border-radius: 10px;
+}
+@media screen and (min-width: 40em) {
+  body.postid-4063 .email {
+    padding: 1rem 2.5rem;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
