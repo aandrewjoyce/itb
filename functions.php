@@ -1,7 +1,7 @@
 <?php
 // Enqueue our stylesheet
 function itb_theme() {
-	wp_enqueue_style('style', get_stylesheet_uri(), '2.0.5');
+	wp_enqueue_style('style', get_stylesheet_uri(), '2.0.8');
 }   add_action('wp_enqueue_scripts', 'itb_theme');
 
 // Let WordPress deal with titles

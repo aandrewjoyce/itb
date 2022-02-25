@@ -24,7 +24,7 @@ body {
 	overflow-x:hidden;
 }
 
-body:not(.page-template-page-image):not(.single.has-featured-image) {
+body:not(.page-template-page-image):not(.single.has-featured-image):not(.archive) {
 	main { position:static; }
 	main:before {
 		background-color: var(--background);

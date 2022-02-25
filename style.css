@@ -76,10 +76,10 @@ body {
   overflow-x: hidden;
 }
 
-body:not(.page-template-page-image):not(.single.has-featured-image) main {
+body:not(.page-template-page-image):not(.single.has-featured-image):not(.archive) main {
   position: static;
 }
-body:not(.page-template-page-image):not(.single.has-featured-image) main:before {
+body:not(.page-template-page-image):not(.single.has-featured-image):not(.archive) main:before {
   background-color: var(--background);
   background: url("https://intothebook.net/wp-content/uploads/2022/02/bg-light-scaled.jpg") center center;
   background-size: cover;
@@ -94,11 +94,11 @@ body:not(.page-template-page-image):not(.single.has-featured-image) main:before 
   z-index: -2;
 }
 @media (prefers-color-scheme: dark) {
-  body:not(.page-template-page-image):not(.single.has-featured-image) main:before {
+  body:not(.page-template-page-image):not(.single.has-featured-image):not(.archive) main:before {
     background-image: url("https://intothebook.net/wp-content/uploads/2022/02/bg-dark.jpg");
   }
 }
-body:not(.page-template-page-image):not(.single.has-featured-image) main:after {
+body:not(.page-template-page-image):not(.single.has-featured-image):not(.archive) main:after {
   content: "";
   background: linear-gradient(0deg, var(--background) 8%, transparent 100%);
   height: 140vh;
@@ -576,13 +576,23 @@ cite {
   font-style: normal;
 }
 
+body.archive main, body.page-id-4347 main {
+  padding-top: unset;
+}
+body.archive h1, body.page-id-4347 h1 {
+  color: var(--quiet);
+}
+
 section.archives {
   margin: 0 auto;
   max-width: 90ch;
 }
 section.archives h1 {
-  color: var(--quiet);
+  font-weight: 200;
+  letter-spacing: 2px;
   opacity: 0.95;
+  position: relative;
+  text-transform: uppercase;
 }
 section.archives h2 span {
   font-weight: 300;
@@ -628,6 +638,41 @@ section.archives span.tag {
 section.archives span.tag a {
   color: var(--tertiary);
   text-decoration: unset;
+}
+section.archives article:last-child {
+  padding-block-end: 5vw;
+}
+section.archives article:first-of-type {
+  padding-block-start: 5vw;
+}
+
+body.archive h1 {
+  color: var(--quiet);
+}
+body.archive h1:before {
+  content: "";
+  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzNTUiIGhlaWdodD0iMzU3Ij48ZGVmcz48ZmlsdGVyIGZpbHRlclVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgaWQ9ImEiIHg9IjAiIHk9IjAiIHdpZHRoPSIzNTUiIGhlaWdodD0iMzU3Ij48ZmVPZmZzZXQgaW49IlNvdXJjZUFscGhhIiBkeT0iMTAiLz48ZmVHYXVzc2lhbkJsdXIgcmVzdWx0PSJibHVyT3V0IiBzdGREZXZpYXRpb249IjQuNDcyIi8+PGZlRmxvb2QgZmxvb2QtY29sb3I9IiMwMDAiIHJlc3VsdD0iZmxvb2RPdXQiLz48ZmVDb21wb3NpdGUgb3BlcmF0b3I9ImF0b3AiIGluPSJmbG9vZE91dCIgaW4yPSJibHVyT3V0Ii8+PGZlQ29tcG9uZW50VHJhbnNmZXI+PGZlRnVuY0EgdHlwZT0ibGluZWFyIiBzbG9wZT0iLjA1Ii8+PC9mZUNvbXBvbmVudFRyYW5zZmVyPjxmZU1lcmdlPjxmZU1lcmdlTm9kZS8+PGZlTWVyZ2VOb2RlIGluPSJTb3VyY2VHcmFwaGljIi8+PC9mZU1lcmdlPjwvZmlsdGVyPjwvZGVmcz48ZyBmaWx0ZXI9InVybCgjYSkiPjx0ZXh0IGZvbnQtZmFtaWx5PSJNeXJpYWQgUHJvIiB0cmFuc2Zvcm09Im1hdHJpeCgxLjIgLjAwMDA0IC0uMDAwMDQgMS4yIDE5LjI5OSAzMjAuOTk1KSIgZm9udC1zaXplPSI2NjYuNjY3Ij48dHNwYW4gZm9udC1mYW1pbHk9IkF1dG9tb2JpbGUgQ29udGVzdCIgZmlsbD0iIzhDOTc5NSI+IzwvdHNwYW4+PC90ZXh0PjwvZz48L3N2Zz4=") center center no-repeat;
+  background-size: contain;
+  display: block;
+  opacity: 0.5;
+  position: absolute;
+  inset-block-start: 0px;
+  inset-inline-start: -180px;
+  width: 200px;
+  height: 200px;
+  z-index: -1;
+}
+body.archive h2 a {
+  text-decoration-color: var(--theme);
+}
+body.archive .post-info date, body.archive .post-info label {
+  color: var(--theme);
+}
+body.archive:hover h2 a {
+  text-decoration-color: var(--textcolor);
+}
+body.archive .post-info date, body.archive .post-info label {
+  color: var(--textcolor);
 }
 
 p.her strong {

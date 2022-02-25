@@ -1,8 +1,22 @@
+body.archive, body.page-id-4347 {
+    main { padding-top:unset; }
+
+    h1 { color:var(--quiet); }
+}
+
+
+// Specific to 'the archives'
 section.archives {
     margin:0 auto;
     max-width:90ch;
 
-    h1 { color:var(--quiet); opacity:0.95; }
+    h1 {
+        font-weight:200;
+        letter-spacing:2px;
+        opacity:0.95;
+        position:relative;
+        text-transform:uppercase;
+    }
     h2 span { font-weight:300; color:var(--quiet); }
 
     ul.year-list {
@@ -36,4 +50,33 @@ section.archives {
         text-transform:uppercase;
         a { color:var(--tertiary); text-decoration:unset; }
     }
+
+    article:last-child { padding-block-end:5vw; }
+    article:first-of-type { padding-block-start:5vw; }
+}
+
+
+// Specific to archive pages
+body.archive {
+    h1 { color:var(--quiet);
+        &:before {
+            content:'';
+            background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzNTUiIGhlaWdodD0iMzU3Ij48ZGVmcz48ZmlsdGVyIGZpbHRlclVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgaWQ9ImEiIHg9IjAiIHk9IjAiIHdpZHRoPSIzNTUiIGhlaWdodD0iMzU3Ij48ZmVPZmZzZXQgaW49IlNvdXJjZUFscGhhIiBkeT0iMTAiLz48ZmVHYXVzc2lhbkJsdXIgcmVzdWx0PSJibHVyT3V0IiBzdGREZXZpYXRpb249IjQuNDcyIi8+PGZlRmxvb2QgZmxvb2QtY29sb3I9IiMwMDAiIHJlc3VsdD0iZmxvb2RPdXQiLz48ZmVDb21wb3NpdGUgb3BlcmF0b3I9ImF0b3AiIGluPSJmbG9vZE91dCIgaW4yPSJibHVyT3V0Ii8+PGZlQ29tcG9uZW50VHJhbnNmZXI+PGZlRnVuY0EgdHlwZT0ibGluZWFyIiBzbG9wZT0iLjA1Ii8+PC9mZUNvbXBvbmVudFRyYW5zZmVyPjxmZU1lcmdlPjxmZU1lcmdlTm9kZS8+PGZlTWVyZ2VOb2RlIGluPSJTb3VyY2VHcmFwaGljIi8+PC9mZU1lcmdlPjwvZmlsdGVyPjwvZGVmcz48ZyBmaWx0ZXI9InVybCgjYSkiPjx0ZXh0IGZvbnQtZmFtaWx5PSJNeXJpYWQgUHJvIiB0cmFuc2Zvcm09Im1hdHJpeCgxLjIgLjAwMDA0IC0uMDAwMDQgMS4yIDE5LjI5OSAzMjAuOTk1KSIgZm9udC1zaXplPSI2NjYuNjY3Ij48dHNwYW4gZm9udC1mYW1pbHk9IkF1dG9tb2JpbGUgQ29udGVzdCIgZmlsbD0iIzhDOTc5NSI+IzwvdHNwYW4+PC90ZXh0PjwvZz48L3N2Zz4=") center center no-repeat;
+            background-size:contain;
+            display:block;
+            opacity:0.5;
+            position:absolute;
+            inset-block-start:0px;
+            inset-inline-start:-180px;
+            width:200px;
+            height:200px;
+            z-index:-1;
+        }
+    }
+    h2 a { text-decoration-color:var(--theme); }
+    .post-info date, .post-info label { color:var(--theme); }
+
+    &:hover {
+        h2 a { text-decoration-color: var(--textcolor); } }
+        .post-info date, .post-info label { color:var(--textcolor); }
 }

@@ -21,25 +21,20 @@
                             $response = rest_do_request( $request );
                             $responsedata = $response->data;
 
-                            $items=[];
-                            foreach ($responsedata as $item) {
-	                           // $uniqueyears = array_unique($items);
-//	                            for every item whos $item->year matches $uniqueyear,
-//                                add $item->month and $item->posts as a key-value pair in an array in that $uniqueyear
-
-                                $items[$item->year][$item->month] .= $item->posts;
-                                $years[] = $item->year;
+                            $dates=[];
+                            foreach ($responsedata as $datum) {
+                                $dates[$datum->year][$datum->month] = $datum->posts;
+                                $years[] = $datum->year;
                             }
 
-                            $year_string = '';
-                            $year_total = 0;
-
-                            foreach ($items as $item) {
+                            foreach ($dates as $date) {
+	                            $year_string = '';
+	                            $year_total = 0;
                                 $i = 1;
                                 while ($i < 13) {
-                                    if ( isset($item[$i]) ) {
-                                        $year_string .= $item[$i] . ',';
-                                        $year_total = $year_total + number_format($item[$i]);
+                                    if ( isset($date[$i]) ) {
+                                        $year_string .= $date[$i] . ',';
+                                        $year_total = $year_total + number_format($date[$i]);
                                     } else { $year_string .= '0,'; }
                                     $i++;
                                 }
@@ -47,9 +42,7 @@
                                 $yeartotals[] = $year_total;
 
                                 unset($year_string);
-                                unset($year_total);
                             }
-
                             $uniqueyears = array_unique($years);
 
                             $k = 0;
@@ -90,52 +83,6 @@
                                 $k++;
                             }
                             ?>
-
-
-                            <?php
-            //            global $wpdb;
-            //		        $result = array();
-            //
-            //		        $query_prepare = $wpdb->prepare("SELECT YEAR(post_date) FROM ($wpdb->posts) WHERE post_status = 'publish' AND post_type = %s GROUP BY YEAR(post_date) DESC", 'post');
-            //
-            //		        $years = $wpdb->get_results($query_prepare);
-            //
-            //		        if (is_array($years) && count($years) > 0) {
-            //			        foreach ($years as $year) {
-            //				        $year = preg_replace('/[^0-9.]+/', '', json_encode($year));
-            //				        echo '<h4>' . $year . ': ';
-            //				        $i = 1;
-            //				        while ($i < 13) {
-            //					        $args = array('date_query' => array(
-            //						        array(
-            //							        'month' => $i,
-            //							        'year' => $year,
-            //						        )
-            //					        ));
-            //					        $query = new WP_Query($args);
-            //
-            //					        if ($query->have_posts()) {
-            //						        $j = 0;
-            //						        while ($query->have_posts()) {
-            //							        $query->the_post();
-            //							        $j++;
-            //						        }
-            //						        $results[] = $j;
-            //					        } else {
-            //						        $results[] = 0;
-            //					        }
-            //
-            //					        $i++;
-            //				        }
-            //				        echo 'x' . array_sum($results) . '</h4>';
-            //				        $yearresults = implode(',', $results);
-            //				        unset($results);
-            //				        echo '<img src="https://v1.sparkline.11ty.dev/800x160/' . $yearresults . '/%2394b388/" alt="Sparkline" loading="lazy" decoding="async" class="spark-img" width="800" height="160">';
-            //				        echo '<br/>';
-            //				        echo '<br/>';
-            //			        }
-            //		        }
-            //	        ?>
         </section>
 </main>
 

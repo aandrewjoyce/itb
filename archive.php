@@ -1,5 +1,11 @@
 <?php get_header(); ?>
 
+<?php $term = get_queried_object(); ?>
+<style>
+    :root {
+        --theme: var(--<? echo get_field('theme_color', $term); ?>);
+    }
+</style>
 <main>
     <section class="archives">
             <h1>
