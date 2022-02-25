@@ -6,7 +6,7 @@
     if ( have_posts() ) { ?>
 	<?php while ( have_posts() ) {
 	    ?>
-        <article <?php echo ($i < 1) ? 'class="first"' : ''; ?>'>
+        <article <?php echo ($i < 1) ? 'class="first"' : ''; ?>>
             <?php the_post(); ?>
 
             <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
@@ -20,6 +20,10 @@
 
         </article>
     <?php $i++; } ?>
+        <div class="archives">
+            <a class="button" href="/archives">Browse the Archives</a>
+            <span class="quiet">(if you dare)</span>
+        </div>
 <?php } ?>
 </main>
 <?php get_footer(); ?>

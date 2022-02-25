@@ -6,15 +6,10 @@ body.single {
 		transition: 0.3s all;
 		width: var(--max-width);
 
-
-		h1 { line-height:1.05; font-size:3rem; color:var(--quiet); }
+		h1 {  color:var(--quiet); line-height:1.05; opacity:0.95; }
 		.post-info { margin-bottom: 2vw; }
 
 		.post-info date { margin-right: 2vw; }
-
-		@media screen and (min-width:48em) {
-			h1 { font-size:5rem; }
-		}
 	}
 
 	&.has-featured-image {
@@ -24,7 +19,7 @@ body.single {
 			content:'';
 			background-size:cover;
 			height:100vh;
-			opacity:1;
+			opacity:0.9;
 			position:absolute;
 			inset-inline-start: 0;
 			inset-inline-end: 0;
@@ -34,7 +29,7 @@ body.single {
 		main:after {
 			content:'';
 			background:#f00;
-			background: linear-gradient(0deg, var(--background) 8%, transparent 100%);
+			background: linear-gradient(0deg, var(--background) 8%, var(--background-shadow) 100%);
 			height:100vh;
 			position:absolute;
 				inset-inline-start:0;

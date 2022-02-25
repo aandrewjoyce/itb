@@ -62,7 +62,7 @@ Text Domain: itb
     color: var(--primary-light);
   }
 }
-footer, header, main {
+footer, main {
   padding: 5vw;
 }
 
@@ -135,9 +135,14 @@ ol {
 h1, .site-logo {
   color: var(--primary);
   font-family: sofia-pro, sans-serif;
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: 700;
   text-decoration: unset;
+}
+@media screen and (min-width: 48em) {
+  h1, .site-logo {
+    font-size: 5rem;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -163,17 +168,17 @@ h3, .more-link {
   letter-spacing: 2px;
 }
 
-.more-link {
+.more-link, .button {
   color: var(--gold);
   display: inline-block;
   font-family: sofia-pro, sans-serif;
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-weight: 700;
   position: relative;
   text-decoration: unset;
   transition: 0.3s all;
 }
-.more-link:before {
+.more-link:before, .button:before {
   content: "";
   background: var(--gold);
   height: 3px;
@@ -185,20 +190,20 @@ h3, .more-link {
   inset-block-end: -2px;
   transition: 0.1s all;
 }
-.more-link:after {
+.more-link:after, .button:after {
   content: "";
   background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMCIgaGVpZ2h0PSIyMSI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBmaWxsPSIjRDlBNTBCIiBkPSJtMTcuNjkgMi44MDQgNS4yMTEgNS44MzJILjk0M3YzLjcwN2gyMS44NUwxNy42OSAxOC42N2wyLjAwNyAyLjAyNEwyOS45MiAxMC40MzYgMTkuNjk3LjE3NyAxNy42OSAyLjgwNFoiLz48L3N2Zz4=") no-repeat center center;
   background-size: contain;
   margin-inline-start: 5px;
   position: absolute;
-  inset-block-end: 2px;
+  inset-block-end: 3px;
   width: 20px;
   height: 20px;
 }
-.more-link:hover {
+.more-link:hover, .button:hover {
   transform: scale(1.035);
 }
-.more-link:hover:before {
+.more-link:hover:before, .button:hover:before {
   width: 100%;
 }
 
@@ -206,6 +211,51 @@ figcaption {
   color: var(--quiet);
   font-family: sofia-pro, sans-serif;
   font-size: 1rem;
+}
+
+span.quiet {
+  color: var(--quiet);
+  display: block;
+  font-family: "sofia-pro", sans-serif;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+body:not(.single) article h2,
+div.archives h2 {
+  line-height: 1.1;
+  margin-bottom: 0.25em;
+}
+body:not(.single) article h2:after,
+div.archives h2:after {
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MiIgaGVpZ2h0PSIzNiI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBmaWxsPSIjNDJBNjlEIiBkPSJNMjkuMzE3IDQuMzQgMzkuODc2IDE0LjlILjUxOXY2LjIwN2gzOS4xNjVMMjkuMzE3IDMxLjQ3NGw0LjM1MiA0LjM1MiAxNy44NTUtMTcuOTE5TDMzLjY2OS4xbC00LjM1MiA0LjI0WiIvPjwvc3ZnPg==");
+  background-repeat: no-repeat;
+  background-size: contain;
+  content: "";
+  display: inline-block;
+  height: 20px;
+  margin-inline-start: var(--padding);
+  position: relative;
+  inset-block-start: 2px;
+  width: 36px;
+}
+body:not(.single) article:hover h2 a,
+div.archives:hover h2 a {
+  color: var(--textcolor);
+  text-decoration-color: var(--primary);
+}
+body:not(.single) article:hover date, body:not(.single) article:hover span,
+div.archives:hover date,
+div.archives:hover span {
+  color: var(--primary);
+}
+@media screen and (min-width: 48em) {
+  body:not(.single) article,
+div.archives {
+    background: var(--background-quiet);
+    margin-bottom: calc(var(--padding) * -1);
+    padding: 1vw 5vw 0;
+  }
 }
 
 footer {
@@ -274,29 +324,32 @@ footer > p {
   text-align: center;
 }
 
-body:not(.page) header {
+header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 5vw 5vw 3vw;
   width: 100%;
 }
-body:not(.page) header p {
+header p {
   font-size: 0.875rem;
   text-align: center;
 }
 @media screen and (min-width: 48em) {
-  body:not(.page) header p {
+  header p {
     letter-spacing: 3px;
     text-transform: uppercase;
   }
 }
-body:not(.page) .site-logo {
+
+.site-logo {
   margin: unset;
   max-width: 600px;
   width: 100%;
   text-indent: -999em;
 }
-body:not(.page) .site-logo a {
+
+.site-logo a {
   background: url("https://intothebook.net/wp-content/uploads/2022/02/mainlogo-dark.svg") no-repeat center center;
   background-size: contain;
   display: block;
@@ -305,36 +358,16 @@ body:not(.page) .site-logo a {
   position: relative;
   width: 100%;
 }
+
 @media (prefers-color-scheme: dark) {
-  body:not(.page) header .site-logo a {
+  header .site-logo a {
     background-image: url("https://intothebook.net/wp-content/uploads/2022/02/mainlogo.svg");
   }
-  body:not(.page) header p {
+
+  header p {
     color: #fff;
   }
 }
-
-body.page header {
-  padding: 0 2vw;
-  text-align: center;
-}
-body.page header a {
-  background: url(https://intothebook.net/wp-content/uploads/2022/02/logo.svg) no-repeat center center;
-  background-color: var(--primary);
-  background-size: 85%;
-  color: transparent;
-  display: inline-block;
-  margin: 0 auto;
-  overflow: hidden;
-  transition: 0.2s all;
-}
-body.page header a:hover {
-  background-color: var(--primary);
-}
-body.page header p {
-  display: none;
-}
-
 header p, footer p,
 .simple-banner span,
 p.post-info {
@@ -361,8 +394,7 @@ body.home main {
   display: flex;
   flex-direction: column;
   gap: 2vw;
-  margin: 0 auto;
-  margin-bottom: 2vw;
+  margin: 0 auto 2vw;
   max-width: var(--max-width);
 }
 body.home main article:first-of-type {
@@ -374,9 +406,13 @@ body.home main article:first-of-type {
 body.home main article:first-of-type h2 {
   line-height: 1;
   margin-top: unset;
+  margin-bottom: var(--double-padding);
 }
 body.home main article:first-of-type h2 a {
   text-decoration: unset;
+}
+body.home main article:first-of-type h2:after {
+  display: none;
 }
 @media screen and (min-width: 48em) {
   body.home main article:first-of-type {
@@ -384,7 +420,7 @@ body.home main article:first-of-type h2 a {
     padding: 4vw 5vw;
   }
   body.home main article:first-of-type h2 {
-    font-size: 300%;
+    font-size: 350%;
     text-decoration-skip-ink: all;
   }
   body.home main article:first-of-type p:not(.post-info) {
@@ -397,43 +433,25 @@ body.home main article:first-of-type h2 a {
     color: var(--quiet);
   }
 }
-body.home main article:not(:first-of-type) h2 {
-  line-height: 1.1;
-  margin-bottom: 0.25em;
-}
-body.home main article:not(:first-of-type) h2:after {
-  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MiIgaGVpZ2h0PSIzNiI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBmaWxsPSIjNDJBNjlEIiBkPSJNMjkuMzE3IDQuMzQgMzkuODc2IDE0LjlILjUxOXY2LjIwN2gzOS4xNjVMMjkuMzE3IDMxLjQ3NGw0LjM1MiA0LjM1MiAxNy44NTUtMTcuOTE5TDMzLjY2OS4xbC00LjM1MiA0LjI0WiIvPjwvc3ZnPg==");
-  background-repeat: no-repeat;
-  background-size: contain;
-  content: "";
-  display: inline-block;
-  height: 20px;
-  margin-inline-start: var(--padding);
-  position: relative;
-  inset-block-start: 2px;
-  width: 36px;
-}
-body.home main article:not(:first-of-type):hover h2 a {
-  color: var(--textcolor);
-  text-decoration-color: var(--primary);
-}
-body.home main article:not(:first-of-type):hover date, body.home main article:not(:first-of-type):hover span {
-  color: var(--primary);
-}
-@media screen and (min-width: 48em) {
-  body.home main article:not(:first-of-type) {
-    background: var(--background-quiet);
-    margin-bottom: calc(var(--padding) * -1);
-    padding: 1vw 5vw 0;
-  }
-  body.home main article:not(:first-of-type):last-of-type {
-    padding-block-end: 2vw;
-  }
-}
 @media screen and (min-width: 48em) {
   body.home main {
     gap: var(--padding);
   }
+}
+body.home main div.archives {
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  padding-block-end: 5vw;
+}
+body.home main div.archives a.button {
+  letter-spacing: 2px;
+  margin: 3rem auto 1rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+body.home main div.archives:hover span {
+  color: var(--gold);
 }
 
 main > * {
@@ -504,20 +522,15 @@ body.single main {
   width: var(--max-width);
 }
 body.single main h1 {
-  line-height: 1.05;
-  font-size: 3rem;
   color: var(--quiet);
+  line-height: 1.05;
+  opacity: 0.95;
 }
 body.single main .post-info {
   margin-bottom: 2vw;
 }
 body.single main .post-info date {
   margin-right: 2vw;
-}
-@media screen and (min-width: 48em) {
-  body.single main h1 {
-    font-size: 5rem;
-  }
 }
 body.single.has-featured-image {
   position: relative;
@@ -529,7 +542,7 @@ body.single.has-featured-image main:before {
   content: "";
   background-size: cover;
   height: 100vh;
-  opacity: 1;
+  opacity: 0.9;
   position: absolute;
   inset-inline-start: 0;
   inset-inline-end: 0;
@@ -539,7 +552,7 @@ body.single.has-featured-image main:before {
 body.single.has-featured-image main:after {
   content: "";
   background: #f00;
-  background: linear-gradient(0deg, var(--background) 8%, transparent 100%);
+  background: linear-gradient(0deg, var(--background) 8%, var(--background-shadow) 100%);
   height: 100vh;
   position: absolute;
   inset-inline-start: 0;
@@ -561,6 +574,60 @@ cite {
   color: var(--textcolor);
   font-size: 1rem;
   font-style: normal;
+}
+
+section.archives {
+  margin: 0 auto;
+  max-width: 90ch;
+}
+section.archives h1 {
+  color: var(--quiet);
+  opacity: 0.95;
+}
+section.archives h2 span {
+  font-weight: 300;
+  color: var(--quiet);
+}
+section.archives ul.year-list {
+  margin: var(--double-padding) 0 3rem;
+  padding: unset;
+}
+section.archives ul.year-list li {
+  font-family: "sofia-pro", sans-serif;
+  font-size: 1rem;
+  list-style-type: none;
+  margin-bottom: 0.25rem;
+}
+section.archives ul.year-list a:not(:first-of-type) {
+  color: var(--secondary);
+}
+section.archives ul.year-list date {
+  display: inline-block;
+  min-width: 120px;
+  font-weight: bold;
+}
+section.archives span.sep {
+  border-left: 2px solid var(--quiet);
+  color: transparent;
+  margin: 0 0.5rem;
+  position: relative;
+  inset-block-end: -2px;
+}
+section.archives div.wordcount {
+  display: inline;
+}
+section.archives span.tag {
+  background: var(--background-quiet);
+  border-radius: 2px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-right: 0.5rem;
+  padding: 2px 5px;
+  text-transform: uppercase;
+}
+section.archives span.tag a {
+  color: var(--tertiary);
+  text-decoration: unset;
 }
 
 p.her strong {

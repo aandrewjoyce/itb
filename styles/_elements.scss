@@ -10,9 +10,13 @@ ol, { color:var(--textcolor); line-height:1.75;
 h1, .site-logo {
 	color:var(--primary);
 	font-family: sofia-pro, sans-serif;
-	font-size:2.5rem;
+	font-size:3rem;
 	font-weight:700;
 	text-decoration:unset;
+
+	@media screen and (min-width:48em) {
+		font-size:5rem;
+	}
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -30,11 +34,11 @@ h1, h2, h3, h4, h5, h6 {
 h2 { font-weight:900; }
 h3, .more-link { text-transform:uppercase; font-weight:300; letter-spacing:2px; }
 
-.more-link {
+.more-link, .button {
 	color:var(--gold);
 	display:inline-block;
 	font-family: sofia-pro, sans-serif;
-	font-size:1rem;
+	font-size:1.25rem;
 	font-weight:700;
 	position:relative;
 	text-decoration:unset;
@@ -58,7 +62,7 @@ h3, .more-link { text-transform:uppercase; font-weight:300; letter-spacing:2px; 
 		background-size:contain;
 		margin-inline-start:5px;
 		position:absolute;
-		inset-block-end:2px;
+		inset-block-end:3px;
 		width:20px;
 		height:20px;
 	}
@@ -72,4 +76,46 @@ figcaption {
 	color:var(--quiet);
 	font-family: sofia-pro, sans-serif;
 	font-size:1rem;
+}
+
+
+span.quiet {
+	color:var(--quiet);
+	display:block;
+	font-family:'sofia-pro', sans-serif;
+	font-size:0.875rem;
+	text-align:center;
+}
+
+
+
+body:not(.single) article,
+div.archives {
+	h2 {
+		line-height:1.1;
+		margin-bottom:0.25em;
+	}
+	h2:after {
+		background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MiIgaGVpZ2h0PSIzNiI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBmaWxsPSIjNDJBNjlEIiBkPSJNMjkuMzE3IDQuMzQgMzkuODc2IDE0LjlILjUxOXY2LjIwN2gzOS4xNjVMMjkuMzE3IDMxLjQ3NGw0LjM1MiA0LjM1MiAxNy44NTUtMTcuOTE5TDMzLjY2OS4xbC00LjM1MiA0LjI0WiIvPjwvc3ZnPg==");
+		background-repeat:no-repeat;
+		background-size:contain;
+		content:'';
+		display:inline-block;
+		height:20px;
+		margin-inline-start:var(--padding);
+		position:relative;
+		inset-block-start:2px;
+		width:36px;
+	}
+
+	&:hover {
+		h2 a { color:var(--textcolor); text-decoration-color:var(--primary); }
+		date, span { color:var(--primary); }
+	}
+
+	@media screen and (min-width:48em) {
+		background:var(--background-quiet);
+		margin-bottom:calc(var(--padding) * -1);
+		padding:1vw 5vw 0;
+	}
 }

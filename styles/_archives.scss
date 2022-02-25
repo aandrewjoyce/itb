@@ -1,0 +1,39 @@
+section.archives {
+    margin:0 auto;
+    max-width:90ch;
+
+    h1 { color:var(--quiet); opacity:0.95; }
+    h2 span { font-weight:300; color:var(--quiet); }
+
+    ul.year-list {
+        margin:var(--double-padding) 0 3rem;
+        padding:unset;
+        li {
+            font-family:'sofia-pro', sans-serif;
+            font-size:1rem;
+            list-style-type:none;
+            margin-bottom:0.25rem;
+        }
+        a:not(:first-of-type) { color:var(--secondary); }
+        date { display:inline-block; min-width:120px; font-weight:bold; }
+    }
+    span.sep {
+        border-left:2px solid var(--quiet);
+        color:transparent;
+        margin:0 0.5rem;
+        position:relative;
+            inset-block-end:-2px;
+    }
+
+    div.wordcount { display:inline; }
+    span.tag {
+        background:var(--background-quiet);
+        border-radius:2px;
+        font-size:0.75rem;
+        font-weight:500;
+        margin-right:0.5rem;
+        padding:2px 5px;
+        text-transform:uppercase;
+        a { color:var(--tertiary); text-decoration:unset; }
+    }
+}

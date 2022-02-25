@@ -12,7 +12,7 @@ Text Domain: itb
 
 @import "styles/vars";
 
-footer, header, main { padding:5vw; }
+footer, main { padding:5vw; }
 
 body {
 	font-family: adobe-caslon-pro, serif;
@@ -64,5 +64,6 @@ body:not(.page-template-page-image):not(.single.has-featured-image) {
 @import "styles/home";
 @import "styles/page";
 @import "styles/single";
+@import "styles/archives";
 
 @import "styles/specificposts";

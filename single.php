@@ -10,7 +10,9 @@
             <h1><?php the_title(); ?></h1>
             <p class="post-info">
                 Posted: <date><?php the_date('F j, Y'); ?></date>
-                Time to Read: <label><?php echo do_shortcode('[rt_reading_time postfix="minutes" postfix_singular="minute"]'); ?></label>
+                <!--Time to Read: <label><?php //echo do_shortcode('[rt_reading_time postfix="minutes" postfix_singular="minute"]'); ?></label>-->
+	            <?php echo do_shortcode('[wp-word-count]'); ?> words
+
             </p>
             <?php the_content(); ?>
 
