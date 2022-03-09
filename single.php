@@ -9,13 +9,30 @@
 
             <h1><?php the_title(); ?></h1>
             <p class="post-info">
-                Posted: <date><?php the_date('F j, Y'); ?></date>
-                <!--Time to Read: <label><?php //echo do_shortcode('[rt_reading_time postfix="minutes" postfix_singular="minute"]'); ?></label>-->
-	            <?php echo do_shortcode('[wp-word-count]'); ?> words
+                <span class="category">
+	            <?php $cats = get_the_category();
+		            if ( isset($cats[0]) ) { ?>
+                        <a class="cat" href="/<?php echo $cats[0]->slug; ?>"><?php echo $cats[0]->name; ?></a>
+		            <?php } ?>
+                    <style> :root { --theme: var(--<?php the_field( 'theme_color', $cats[0] ); ?>); } </style>
+                </span>
+
+                <span class="tags">
+                    <?php if ( get_the_tags() ) { ?>
+	                    <?php echo 'Filed in: '; ?>
+	                    <?php the_tags('<span class="tag">', '</span>, <span class="tag">', '</span>'); ?>
+                    <?php } ?>
+                </span>
+
+                <span class="date">Posted: <time><?php the_date('F j, Y'); ?></time></span>
+
+                <span class="wordcount"><?php echo do_shortcode('[wp-word-count]'); ?> words</span>
 
             </p>
             <?php the_content(); ?>
 
+	        <?php // comments_template(); ?>
+	        <?php /* Calling just comments_template() is also fine */ ?>
 
 
         </article>

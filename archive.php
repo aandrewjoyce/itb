@@ -19,7 +19,7 @@
         <article>
 		    <?php the_post(); ?>
 
-            <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+            <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
             <p class="post-info">
                 Posted: <date><?php the_date('F j, Y'); ?></date>
                 Time to Read: <label><?php echo do_shortcode('[rt_reading_time postfix="minutes" postfix_singular="minute"]'); ?></label>

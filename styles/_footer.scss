@@ -46,7 +46,10 @@ footer > p { min-width:30ch; width:auto; max-width:60ch; }
 	color: var(--quiet);
 	font-family: sofia-pro, sans-serif;
 	font-size:0.875rem;
+	font-weight:400;
 	grid-area:webring;
 	padding-top:var(--padding);
 	text-align:center;
+
+	p a { color: #d91139}
 }

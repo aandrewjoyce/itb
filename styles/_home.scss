@@ -14,7 +14,7 @@ body.home main {
 		align-self:center;
 		justify-self:center;
 
-		h2 {
+		h3 {
 			line-height:1;
 			margin-top:unset;
 			margin-bottom:var(--double-padding);
@@ -25,7 +25,7 @@ body.home main {
 		@media screen and (min-width:48em) {
 			background:var(--bg-gradient);
 			padding:4vw 5vw;
-			h2 {
+			h3 {
 				font-size: 350%;
 				text-decoration-skip-ink: all;
 			}
@@ -56,6 +56,69 @@ body.home main {
 		}
 
 		&:hover span { color:var(--gold); }
+	}
+
+	div.organize {
+		padding:5vw;
+
+		h2 { margin-bottom:0.5rem; text-align:center; }
+
+		ul {
+			display:flex;
+			flex-wrap:wrap;
+			gap:1.25rem;
+			justify-content:center;
+			list-style-type:none;
+			padding:unset;
+
+			li {
+				font-family:'sofia-pro', sans-serif;
+				font-weight:400;
+				text-transform:uppercase;
+				transition:0.3s all;
+
+				a {
+					color: var(--theme);
+					display: inline-block;
+					font-size: 0.875rem;
+					font-weight:700;
+					padding: 5px 13px 7px;
+					position: relative;
+					text-decoration: none;
+
+
+					&:before {
+						content: '';
+						background: var(--theme);
+						border-radius: 2px;
+						opacity: 0.1;
+						position: absolute;
+						inset-inline-start: 0;
+						inset-inline-end: 0;
+						inset-block-start: 0;
+						inset-block-end: 0;
+						z-index: -1;
+					}
+				}
+
+				&:hover {
+					transform:scale(1.1);
+					a { color:var(--white) }
+					a:before { opacity:1; }
+				}
+			}
+		}
+
+		ul.tags {
+			li {
+				a { color:var(--quiet); text-transform:none; }
+				a:before { background:var(--quiet); }
+
+				&:hover a { color:var(--background); }
+
+				&.currahee, &.fullblood { display:none; }
+			}
+		}
 	}
 
 }	main > * { margin-top:unset; }

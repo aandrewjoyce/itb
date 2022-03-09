@@ -65,10 +65,11 @@
                                             <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>,
                                             <?php $cats = get_the_category();
                                             if ( isset($cats[0]) ) { ?>
-                                                    <?php if ($cats[0]->name === 'Update' || $cats[0]->name === 'Article' ) {
+                                                    <?php $name = $cats[0]->name;
+                                                    if ($name === 'Update' || $name === 'Article' || $name === 'Essay' ) {
                                                         echo ' an ';
                                                     } else { echo ' a '; } ?>
-                                                <a href="/<?php echo $cats[0]->slug; ?>"><?php echo $cats[0]->name; ?></a>
+                                                <a href="/<?php echo $cats[0]->slug; ?>"><?php echo $name; ?></a>
                                                 <?php } ?>
                                             <div class="wordcount"> of <?php echo do_shortcode('[wp-word-count]'); ?> words</div>
 	                                        <?php if ( get_the_tags() ) { ?>

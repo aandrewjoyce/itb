@@ -24,6 +24,8 @@ Text Domain: itb
   --quaternary:#6c7d19;
   --quinary: #7a7a31;
   --gold: #9e6c00;
+  --glorange: #9e5200;
+  --white: #fff;
   --padding:1rem;
   --double-padding:2rem;
   --max-width:90vw;
@@ -53,6 +55,8 @@ Text Domain: itb
     --quaternary:#98b312;
     --quinary: #cccc0a;
     --gold: #d9a50b;
+    --glorange: #d9830b;
+    --white: #fff;
   }
 
   body {
@@ -158,11 +162,21 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
   text-decoration-thickness: 4px;
 }
 
-h2 {
-  font-weight: 900;
+h2, section.archives h1 {
+  color: var(--quiet);
+  font-size: 3.5rem;
+  font-weight: 200;
+  letter-spacing: 2px;
+  opacity: 0.95;
+  position: relative;
+  text-transform: uppercase;
 }
 
-h3, .more-link {
+h3 {
+  font-size: 1.75rem;
+}
+
+h4, .more-link {
   text-transform: uppercase;
   font-weight: 300;
   letter-spacing: 2px;
@@ -210,6 +224,7 @@ h3, .more-link {
 figcaption {
   color: var(--quiet);
   font-family: sofia-pro, sans-serif;
+  font-weight: 400;
   font-size: 1rem;
 }
 
@@ -217,17 +232,44 @@ span.quiet {
   color: var(--quiet);
   display: block;
   font-family: "sofia-pro", sans-serif;
+  font-weight: 400;
   font-size: 0.875rem;
   text-align: center;
 }
 
-body:not(.single) article h2,
-div.archives h2 {
+span.tag {
+  background: var(--background-quiet);
+  border-radius: 2px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-right: 0.5rem;
+  padding: 2px 5px;
+  text-transform: uppercase;
+}
+span.tag a {
+  color: var(--tertiary);
+  text-decoration: unset;
+}
+
+blockquote {
+  font-size: 125%;
+}
+
+cite {
+  font-family: "sofia-pro", san-serif;
+  color: var(--textcolor);
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+}
+
+body:not(.single) article h3,
+div.archives h3 {
   line-height: 1.1;
   margin-bottom: 0.25em;
 }
-body:not(.single) article h2:after,
-div.archives h2:after {
+body:not(.single) article h3:after,
+div.archives h3:after {
   background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MiIgaGVpZ2h0PSIzNiI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBmaWxsPSIjNDJBNjlEIiBkPSJNMjkuMzE3IDQuMzQgMzkuODc2IDE0LjlILjUxOXY2LjIwN2gzOS4xNjVMMjkuMzE3IDMxLjQ3NGw0LjM1MiA0LjM1MiAxNy44NTUtMTcuOTE5TDMzLjY2OS4xbC00LjM1MiA0LjI0WiIvPjwvc3ZnPg==");
   background-repeat: no-repeat;
   background-size: contain;
@@ -319,9 +361,13 @@ footer > p {
   color: var(--quiet);
   font-family: sofia-pro, sans-serif;
   font-size: 0.875rem;
+  font-weight: 400;
   grid-area: webring;
   padding-top: var(--padding);
   text-align: center;
+}
+.webring p a {
+  color: #d91139;
 }
 
 header {
@@ -374,7 +420,7 @@ p.post-info {
   color: var(--quiet);
   font-family: sofia-pro, sans-serif;
   font-size: 1rem;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .simple-banner {
@@ -403,15 +449,15 @@ body.home main article:first-of-type {
   align-self: center;
   justify-self: center;
 }
-body.home main article:first-of-type h2 {
+body.home main article:first-of-type h3 {
   line-height: 1;
   margin-top: unset;
   margin-bottom: var(--double-padding);
 }
-body.home main article:first-of-type h2 a {
+body.home main article:first-of-type h3 a {
   text-decoration: unset;
 }
-body.home main article:first-of-type h2:after {
+body.home main article:first-of-type h3:after {
   display: none;
 }
 @media screen and (min-width: 48em) {
@@ -419,7 +465,7 @@ body.home main article:first-of-type h2:after {
     background: var(--bg-gradient);
     padding: 4vw 5vw;
   }
-  body.home main article:first-of-type h2 {
+  body.home main article:first-of-type h3 {
     font-size: 350%;
     text-decoration-skip-ink: all;
   }
@@ -452,6 +498,70 @@ body.home main div.archives a.button {
 }
 body.home main div.archives:hover span {
   color: var(--gold);
+}
+body.home main div.organize {
+  padding: 5vw;
+}
+body.home main div.organize h2 {
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+body.home main div.organize ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  justify-content: center;
+  list-style-type: none;
+  padding: unset;
+}
+body.home main div.organize ul li {
+  font-family: "sofia-pro", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  transition: 0.3s all;
+}
+body.home main div.organize ul li a {
+  color: var(--theme);
+  display: inline-block;
+  font-size: 0.875rem;
+  font-weight: 700;
+  padding: 5px 13px 7px;
+  position: relative;
+  text-decoration: none;
+}
+body.home main div.organize ul li a:before {
+  content: "";
+  background: var(--theme);
+  border-radius: 2px;
+  opacity: 0.1;
+  position: absolute;
+  inset-inline-start: 0;
+  inset-inline-end: 0;
+  inset-block-start: 0;
+  inset-block-end: 0;
+  z-index: -1;
+}
+body.home main div.organize ul li:hover {
+  transform: scale(1.1);
+}
+body.home main div.organize ul li:hover a {
+  color: var(--white);
+}
+body.home main div.organize ul li:hover a:before {
+  opacity: 1;
+}
+body.home main div.organize ul.tags li a {
+  color: var(--quiet);
+  text-transform: none;
+}
+body.home main div.organize ul.tags li a:before {
+  background: var(--quiet);
+}
+body.home main div.organize ul.tags li:hover a {
+  color: var(--background);
+}
+body.home main div.organize ul.tags li.currahee, body.home main div.organize ul.tags li.fullblood {
+  display: none;
 }
 
 main > * {
@@ -522,7 +632,7 @@ body.single main {
   width: var(--max-width);
 }
 body.single main h1 {
-  color: var(--quiet);
+  color: var(--textcolor);
   line-height: 1.05;
   opacity: 0.95;
 }
@@ -561,19 +671,23 @@ body.single.has-featured-image main:after {
   z-index: -1;
 }
 
-.post-info date, .post-info label {
-  color: var(--quaternary);
+.post-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--double-padding);
+  justify-content: flex-start;
+}
+.post-info time, .post-info label, .post-info a {
+  color: var(--theme);
 }
 
-blockquote {
-  font-size: 125%;
+body.single main article a {
+  color: var(--theme);
 }
 
-cite {
-  font-family: "sofia-pro", san-serif;
-  color: var(--textcolor);
-  font-size: 1rem;
-  font-style: normal;
+body.single footer {
+  padding-top: 5vw;
+  border-top: 5px solid var(--theme);
 }
 
 body.archive main, body.page-id-4347 main {
@@ -587,13 +701,6 @@ section.archives {
   margin: 0 auto;
   max-width: 90ch;
 }
-section.archives h1 {
-  font-weight: 200;
-  letter-spacing: 2px;
-  opacity: 0.95;
-  position: relative;
-  text-transform: uppercase;
-}
 section.archives h2 span {
   font-weight: 300;
   color: var(--quiet);
@@ -604,6 +711,7 @@ section.archives ul.year-list {
 }
 section.archives ul.year-list li {
   font-family: "sofia-pro", sans-serif;
+  font-weight: 400;
   font-size: 1rem;
   list-style-type: none;
   margin-bottom: 0.25rem;
@@ -626,24 +734,15 @@ section.archives span.sep {
 section.archives div.wordcount {
   display: inline;
 }
-section.archives span.tag {
-  background: var(--background-quiet);
-  border-radius: 2px;
-  font-size: 0.75rem;
-  font-weight: 500;
-  margin-right: 0.5rem;
-  padding: 2px 5px;
-  text-transform: uppercase;
-}
-section.archives span.tag a {
-  color: var(--tertiary);
-  text-decoration: unset;
-}
 section.archives article:last-child {
   padding-block-end: 5vw;
 }
 section.archives article:first-of-type {
   padding-block-start: 5vw;
+}
+
+body.archive.tag {
+  --theme: var(--gold) !important;
 }
 
 body.archive h1 {
@@ -668,7 +767,7 @@ body.archive h2 a {
 body.archive .post-info date, body.archive .post-info label {
   color: var(--theme);
 }
-body.archive:hover h2 a {
+body.archive article:hover h2 a {
   text-decoration-color: var(--textcolor);
 }
 body.archive .post-info date, body.archive .post-info label {
@@ -681,7 +780,7 @@ p.her strong {
   color: #fff;
   display: inline-block;
   font-family: "sofia-pro", sans-serif;
-  font-weight: 200;
+  font-weight: 400;
   font-size: 1rem;
   padding: 6px 12px;
   position: relative;
@@ -704,7 +803,7 @@ p.me strong {
   color: #fff;
   display: inline-block;
   font-family: "sofia-pro", sans-serif;
-  font-weight: 200;
+  font-weight: 400;
   font-size: 1rem;
   padding: 6px 12px;
   position: relative;

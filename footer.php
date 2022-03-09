@@ -9,7 +9,7 @@
         </div>
     </div>
 
-    <p><?php if (is_single()) { ?>This page was last updated on <?php echo get_the_modified_time('F jS, Y'); ?>.<br/><?php } ?>
+    <p><?php if (is_single()) { ?>This page was first published on <?php echo get_the_date('F jS, Y'); ?>, and it was last updated on <?php echo get_the_modified_time('F jS, Y'); ?>.<br/><?php } ?>
         🄯 <?php echo date('Y'); ?>
         <span title="All the same, please don't monetize any of this writing.">I wrote this, but nobody owns the web.</span>
         <span title="Credit to Li-Chen Wang">All wrongs reserved</span>.<br/>

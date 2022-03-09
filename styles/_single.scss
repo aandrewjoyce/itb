@@ -6,7 +6,7 @@ body.single {
 		transition: 0.3s all;
 		width: var(--max-width);
 
-		h1 {  color:var(--quiet); line-height:1.05; opacity:0.95; }
+		h1 {  color:var(--textcolor); line-height:1.05; opacity:0.95; }
 		.post-info { margin-bottom: 2vw; }
 
 		.post-info date { margin-right: 2vw; }
@@ -41,16 +41,13 @@ body.single {
 
 }
 
-.post-info date, .post-info label {
-	color: var(--quaternary);
+.post-info {
+	display:flex;
+	flex-wrap:wrap;
+	gap:var(--double-padding);
+	justify-content:flex-start;
+	time, label, a { color:var(--theme); }
 }
 
-blockquote {
-	font-size:125%;
-}
-cite {
-	font-family:'sofia-pro', san-serif;
-	color:var(--textcolor);
-	font-size:1rem;
-	font-style:normal;
-}
+body.single main article a { color:var(--theme); }
+body.single footer { padding-top:5vw; border-top:5px solid var(--theme); }

@@ -31,8 +31,19 @@ h1, h2, h3, h4, h5, h6 {
 		text-decoration-thickness:4px;
 	}
 }
-h2 { font-weight:900; }
-h3, .more-link { text-transform:uppercase; font-weight:300; letter-spacing:2px; }
+h2, section.archives h1 {
+	color:var(--quiet);
+	font-size:3.5rem;
+	font-weight:200;
+	letter-spacing:2px;
+	opacity:0.95;
+	position:relative;
+	text-transform:uppercase;
+}
+
+h3 { font-size:1.75rem; }
+
+h4, .more-link { text-transform:uppercase; font-weight:300; letter-spacing:2px; }
 
 .more-link, .button {
 	color:var(--gold);
@@ -75,6 +86,7 @@ h3, .more-link { text-transform:uppercase; font-weight:300; letter-spacing:2px; 
 figcaption {
 	color:var(--quiet);
 	font-family: sofia-pro, sans-serif;
+	font-weight:400;
 	font-size:1rem;
 }
 
@@ -83,19 +95,43 @@ span.quiet {
 	color:var(--quiet);
 	display:block;
 	font-family:'sofia-pro', sans-serif;
+	font-weight:400;
 	font-size:0.875rem;
 	text-align:center;
 }
 
+span.tag {
+	background:var(--background-quiet);
+	border-radius:2px;
+	font-size:0.75rem;
+	font-weight:500;
+	margin-right:0.5rem;
+	padding:2px 5px;
+	text-transform:uppercase;
+	a { color:var(--tertiary); text-decoration:unset; }
+}
+
+blockquote {
+	font-size:125%;
+}
+cite {
+	font-family:'sofia-pro', san-serif;
+	color:var(--textcolor);
+	font-size:1rem;
+	font-style:normal;
+	font-weight:400;
+}
 
 
+
+// Articles with background styling
 body:not(.single) article,
 div.archives {
-	h2 {
+	h3 {
 		line-height:1.1;
 		margin-bottom:0.25em;
 	}
-	h2:after {
+	h3:after {
 		background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MiIgaGVpZ2h0PSIzNiI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBmaWxsPSIjNDJBNjlEIiBkPSJNMjkuMzE3IDQuMzQgMzkuODc2IDE0LjlILjUxOXY2LjIwN2gzOS4xNjVMMjkuMzE3IDMxLjQ3NGw0LjM1MiA0LjM1MiAxNy44NTUtMTcuOTE5TDMzLjY2OS4xbC00LjM1MiA0LjI0WiIvPjwvc3ZnPg==");
 		background-repeat:no-repeat;
 		background-size:contain;
