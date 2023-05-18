@@ -1,0 +1,34 @@
+body { background:#f0f; }
+
+$i = 0;
+
+
+@for $i from 1 through 1000 {
+    .puzzle-piece:nth-child($i) {
+        background:hsla($i,50%,50%,1);
+    }
+}
+
+
+.puzzle-piece:nth-child(1) {
+    background:hsla($i, 50%,
+}
+.puzzle-piece:nth-child(2) {}
+.puzzle-piece:nth-child(3) {}
+.puzzle-piece:nth-child(4) {}
+.puzzle-piece:nth-child(5) {}
+.puzzle-piece:nth-child(6) {}
+.puzzle-piece:nth-child(7) {}
+.puzzle-piece:nth-child(8) {}
+.puzzle-piece:nth-child(9) {}
+.puzzle-piece:nth-child(10) {}
+.puzzle-piece:nth-child(11) {}
+.puzzle-piece:nth-child(12) {}
+.puzzle-piece:nth-child(13) {}
+.puzzle-piece:nth-child(14) {}
+.puzzle-piece:nth-child(15) {}
+.puzzle-piece:nth-child(16) {}
+.puzzle-piece:nth-child(17) {}
+.puzzle-piece:nth-child(18) {}
+.puzzle-piece:nth-child(19) {}
+.puzzle-piece:nth-child(20) {}

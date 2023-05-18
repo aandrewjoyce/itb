@@ -31,7 +31,10 @@
             </p>
             <?php the_content(); ?>
 
-	        <?php // comments_template(); ?>
+            <div class="webmentions">
+            <h4>Mentions from Around the Web:</h4>
+	        <?php comments_template(); ?>
+            </div>
 	        <?php /* Calling just comments_template() is also fine */ ?>
 
 

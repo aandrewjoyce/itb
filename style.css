@@ -690,6 +690,33 @@ body.single footer {
   border-top: 5px solid var(--theme);
 }
 
+.webmentions {
+  background: var(--background-quiet);
+  padding: var(--double-padding);
+}
+.webmentions span.says {
+  font-family: sofia-pro, sans-serif;
+  color: var(--textcolor);
+  opacity: 0.8;
+  font-size: 1rem;
+}
+.webmentions li.comment {
+  list-style-type: none;
+  margin-bottom: var(--double-padding);
+}
+.webmentions .comment-author img {
+  display: none;
+}
+.webmentions .comment-meta.commentmetadata {
+  font-family: sofia-pro, sans-serif;
+  color: var(--textcolor);
+  opacity: 0.8;
+  font-size: 1rem;
+}
+.webmentions p {
+  font-size: 1rem;
+}
+
 body.archive main, body.page-id-4347 main {
   padding-top: unset;
 }

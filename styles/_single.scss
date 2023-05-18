@@ -51,3 +51,16 @@ body.single {
 
 body.single main article a { color:var(--theme); }
 body.single footer { padding-top:5vw; border-top:5px solid var(--theme); }
+
+
+.webmentions {
+	background:var(--background-quiet);
+	padding:var(--double-padding);
+	
+	span.says { font-family: sofia-pro, sans-serif; color:var(--textcolor); opacity:0.8; font-size:1rem; }
+	li.comment { list-style-type:none; margin-bottom:var(--double-padding); }
+	.comment-author img { display:none; }
+	.comment-meta.commentmetadata { font-family: sofia-pro, sans-serif; color:var(--textcolor); opacity:0.8; font-size:1rem; }
+	
+	p { font-size:1rem; }
+}
