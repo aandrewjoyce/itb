@@ -18,9 +18,16 @@
 <header>
     <?php if ( is_front_page() ) { ?>
         <h1 class="site-logo"><a href="/">Into the Book</a></h1>
+    <?php } else if ( is_post_type_archive('blorps') ) { ?>
+        <a href="/">&lsaquo; back to ItB</a>
+        <h1 class="blorps-logo">Blorps</h1>
     <?php } else { ?>
         <div class="site-logo"><a href="/">Into the Book</a></div>
     <?php } ?>
 
+    <?php if ( is_post_type_archive('blorps') ) { ?>
+        <p>cool links, short thoughts, etc.</p>   
+    <?php } else { ?>    
     <p><?php echo get_bloginfo('description'); ?></p>
+    <?php } ?>
 </header>

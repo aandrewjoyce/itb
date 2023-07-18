@@ -58,7 +58,6 @@ Text Domain: itb
     --glorange: #d9830b;
     --white: #fff;
   }
-
   body {
     background: var(--background);
   }
@@ -66,7 +65,8 @@ Text Domain: itb
     color: var(--primary-light);
   }
 }
-footer, main {
+footer,
+main {
   padding: 5vw;
 }
 
@@ -130,8 +130,8 @@ ol {
 }
 @media screen and (min-width: 48em) {
   p,
-ul,
-ol {
+  ul,
+  ol {
     font-size: 110%;
   }
 }
@@ -158,7 +158,8 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
   color: var(--secondarytext);
   text-decoration: underline;
   text-decoration-color: var(--primary-shadow);
-  text-decoration-skip-ink: none;
+  -webkit-text-decoration-skip-ink: none;
+          text-decoration-skip-ink: none;
   text-decoration-thickness: 4px;
 }
 
@@ -208,7 +209,8 @@ h4, .more-link {
   content: "";
   background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMCIgaGVpZ2h0PSIyMSI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBmaWxsPSIjRDlBNTBCIiBkPSJtMTcuNjkgMi44MDQgNS4yMTEgNS44MzJILjk0M3YzLjcwN2gyMS44NUwxNy42OSAxOC42N2wyLjAwNyAyLjAyNEwyOS45MiAxMC40MzYgMTkuNjk3LjE3NyAxNy42OSAyLjgwNFoiLz48L3N2Zz4=") no-repeat center center;
   background-size: contain;
-  margin-inline-start: 5px;
+  -webkit-margin-start: 5px;
+          margin-inline-start: 5px;
   position: absolute;
   inset-block-end: 3px;
   width: 20px;
@@ -276,7 +278,8 @@ div.archives h3:after {
   content: "";
   display: inline-block;
   height: 20px;
-  margin-inline-start: var(--padding);
+  -webkit-margin-start: var(--padding);
+          margin-inline-start: var(--padding);
   position: relative;
   inset-block-start: 2px;
   width: 36px;
@@ -293,7 +296,7 @@ div.archives:hover span {
 }
 @media screen and (min-width: 48em) {
   body:not(.single) article,
-div.archives {
+  div.archives {
     background: var(--background-quiet);
     margin-bottom: calc(var(--padding) * -1);
     padding: 1vw 5vw 0;
@@ -317,7 +320,7 @@ footer > p {
 
 .contact-card {
   background: var(--background);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.02);
+  box-shadow: 0 5px 10px hsla(0, 0%, 0%, 0.02);
   border: 1px solid #f0f0f0;
   border-radius: 1px;
   display: grid;
@@ -336,7 +339,7 @@ footer > p {
 }
 @media (prefers-color-scheme: dark) {
   .contact-card {
-    border-color: rgba(255, 255, 255, 0.05);
+    border-color: hsla(0, 0%, 100%, 0.05);
   }
 }
 
@@ -357,7 +360,7 @@ footer > p {
 }
 
 .webring {
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  border-top: 1px solid hsla(0, 0%, 0%, 0.08);
   color: var(--quiet);
   font-family: sofia-pro, sans-serif;
   font-size: 0.875rem;
@@ -400,7 +403,8 @@ header p {
   background-size: contain;
   display: block;
   height: 0;
-  padding-block-start: 22%;
+  -webkit-padding-before: 22%;
+          padding-block-start: 22%;
   position: relative;
   width: 100%;
 }
@@ -409,7 +413,6 @@ header p {
   header .site-logo a {
     background-image: url("https://intothebook.net/wp-content/uploads/2022/02/mainlogo.svg");
   }
-
   header p {
     color: #fff;
   }
@@ -424,7 +427,7 @@ p.post-info {
 }
 
 .simple-banner {
-  background: rgba(255, 255, 255, 0.1);
+  background: hsla(0, 0%, 100%, 0.1);
 }
 .simple-banner div.simple-banner-text span, .simple-banner div.simple-banner-text a {
   color: var(--textcolor);
@@ -467,7 +470,8 @@ body.home main article:first-of-type h3:after {
   }
   body.home main article:first-of-type h3 {
     font-size: 350%;
-    text-decoration-skip-ink: all;
+    -webkit-text-decoration-skip-ink: all;
+            text-decoration-skip-ink: all;
   }
   body.home main article:first-of-type p:not(.post-info) {
     font-size: 120%;
@@ -488,7 +492,8 @@ body.home main div.archives {
   display: flex;
   align-content: center;
   flex-direction: column;
-  padding-block-end: 5vw;
+  -webkit-padding-after: 5vw;
+          padding-block-end: 5vw;
 }
 body.home main div.archives a.button {
   letter-spacing: 2px;
@@ -597,7 +602,7 @@ body.page-template-page-image main:before {
 }
 body.page-template-page-image article {
   background: var(--background);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.02);
+  box-shadow: 0 5px 10px hsla(0, 0%, 0%, 0.02);
   border-radius: 1px;
   max-width: 90ch;
   padding: 5vw;
@@ -765,10 +770,12 @@ section.archives div.wordcount {
   display: inline;
 }
 section.archives article:last-child {
-  padding-block-end: 5vw;
+  -webkit-padding-after: 5vw;
+          padding-block-end: 5vw;
 }
 section.archives article:first-of-type {
-  padding-block-start: 5vw;
+  -webkit-padding-before: 5vw;
+          padding-block-start: 5vw;
 }
 
 body.archive.tag {
@@ -931,4 +938,25 @@ body.postid-4063 .email {
   }
 }
 
-/*# sourceMappingURL=style.css.map */
+body.post-type-archive-blorps {
+  background: #ec5142;
+}
+body.post-type-archive-blorps header > a {
+  font-family: "sofia-pro";
+}
+body.post-type-archive-blorps .blorps-logo {
+  background: url(https://intothebook.net/wp-content/uploads/2023/07/image.svg) no-repeat center center;
+  background-size: contain;
+  margin: 2px 0;
+  text-indent: -999em;
+  width: 360px;
+}
+body.post-type-archive-blorps article {
+  background: transparent;
+  border-top: 2px solid var(--background-shadow);
+  padding: 2rem 0;
+}
+body.post-type-archive-blorps h2 {
+  text-transform: none;
+  font-size: 18px;
+}/*# sourceMappingURL=style.css.map */

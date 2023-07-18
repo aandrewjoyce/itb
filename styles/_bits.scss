@@ -1,0 +1,28 @@
+body.post-type-archive-blorps {
+
+    background: #ec5142;
+
+    header>a {
+        font-family: 'sofia-pro';
+    }
+
+    .blorps-logo {
+        background: url(https://intothebook.net/wp-content/uploads/2023/07/image.svg) no-repeat center center;
+        background-size: contain;
+
+        margin: 2px 0;
+        text-indent: -999em;
+        width: 360px;
+    }
+
+    article {
+        background: transparent;
+        border-top: 2px solid var(--background-shadow);
+        padding: 2rem 0;
+    }
+
+    h2 {
+        text-transform: none;
+        font-size: 18px;
+    }
+}

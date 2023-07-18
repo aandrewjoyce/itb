@@ -12,47 +12,54 @@ Text Domain: itb
 
 @import "styles/vars";
 
-footer, main { padding:5vw; }
+footer,
+main {
+	padding: 5vw;
+}
 
 body {
 	font-family: adobe-caslon-pro, serif;
-	font-size:120%;
+	font-size: 120%;
 	font-weight: 400;
-	line-height:1.6;
-	margin:unset;
-	padding:unset;
-	overflow-x:hidden;
+	line-height: 1.6;
+	margin: unset;
+	padding: unset;
+	overflow-x: hidden;
 }
 
 body:not(.page-template-page-image):not(.single.has-featured-image):not(.archive) {
-	main { position:static; }
+	main {
+		position: static;
+	}
+
 	main:before {
 		background-color: var(--background);
 		background: url('https://intothebook.net/wp-content/uploads/2022/02/bg-light-scaled.jpg') center center;
 		background-size: cover;
-		background-repeat:no-repeat;
-		content:'';
-		opacity:1;
-		position:absolute;
-		height:140vh;
+		background-repeat: no-repeat;
+		content: '';
+		opacity: 1;
+		position: absolute;
+		height: 140vh;
 		inset-inline-start: 0;
 		inset-inline-end: 0;
 		inset-block-start: 0;
-		z-index:-2;
+		z-index: -2;
 
 		@media (prefers-color-scheme: dark) {
 			background-image: url('https://intothebook.net/wp-content/uploads/2022/02/bg-dark.jpg');
 		}
 	}
+
 	main:after {
-		content:'';
+		content: '';
 		background: linear-gradient(0deg, var(--background) 8%, transparent 100%);
-		height:140vh;
-		position:absolute;
-		inset-inline-start:0;
-		inset-inline-end:0;
-		inset-block-start:0;
-		z-index:-1;
+		height: 140vh;
+		position: absolute;
+		inset-inline-start: 0;
+		inset-inline-end: 0;
+		inset-block-start: 0;
+		z-index: -1;
 	}
 }
 
@@ -67,3 +74,4 @@ body:not(.page-template-page-image):not(.single.has-featured-image):not(.archive
 @import "styles/archives";
 
 @import "styles/specificposts";
+@import "styles/bits";
