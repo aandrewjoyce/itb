@@ -55,7 +55,7 @@
                         $name = $cat->name;
                         $slug = $cat->slug; ?>
 
-                            <li class="category <?php echo $slug; ?>"><a href="<?php echo $slug; ?>"><?php echo $name; ?></a></li>
+                            <li class="category <?php echo $slug; ?>"><a href="/category/<?php echo $slug; ?>"><?php echo $name; ?></a></li>
 
                         <style> .<?php echo $slug; ?> { --theme: var(--<?php the_field( 'theme_color', $cat ); ?>); } </style>
                 <?php } ?>
@@ -70,7 +70,7 @@
                 <li><a href="/blogroll">People worth Following</a></li>
                 <li><a href="/cooltools">Cool Web Tools</a></li>
                 <li><a>Colophon (coming soon)</a></li>
-                <li><a>Posts worth Reading (coming soon)</a></li>
+                <li><a href="/blorps">Blorps: Cool Links, Short Thoughts</a></li>
             </ul>
         </div>
 <?php } ?>

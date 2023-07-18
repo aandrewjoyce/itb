@@ -26,7 +26,8 @@
     <?php } ?>
 
     <?php if ( is_post_type_archive('blorps') ) { ?>
-        <p>cool links, short thoughts, etc.</p>   
+        <p>cool links, short thoughts, etc.</p>  
+        <a href="https://intothebook.net/blorps/feed" title="Get it via RSS"><img src=https://intothebook.net/wp-content/uploads/2023/07/rss.svg" width="32" height="32" ></a> 
     <?php } else { ?>    
     <p><?php echo get_bloginfo('description'); ?></p>
     <?php } ?>
