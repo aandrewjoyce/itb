@@ -31,11 +31,13 @@
             </p>
             <?php the_content(); ?>
 
+            <?php if ( comments_open() || get_comments_number() ) : ?>
             <div class="webmentions">
             <h4>Mentions from Around the Web:</h4>
 	        <?php comments_template(); ?>
             </div>
-	        <?php /* Calling just comments_template() is also fine */ ?>
+	        <?php endif;
+            /* Calling just comments_template() is also fine */ ?>
 
 
         </article>

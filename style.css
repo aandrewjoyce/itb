@@ -563,6 +563,9 @@ body.home main div.organize ul.tags li:hover a {
 body.home main div.organize ul.tags li.currahee, body.home main div.organize ul.tags li.fullblood {
   display: none;
 }
+body.home main div.organize.links {
+  padding-top: unset !important;
+}
 
 main > * {
   margin-top: unset;

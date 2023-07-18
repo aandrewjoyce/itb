@@ -119,6 +119,8 @@ body.home main {
 				&.currahee, &.fullblood { display:none; }
 			}
 		}
+		
+		&.links { padding-top:unset !important; }
 	}
 
 }	main > * { margin-top:unset; }

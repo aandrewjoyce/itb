@@ -61,6 +61,18 @@
                 <?php } ?>
             </ul>
         </div>
+
+        <div class="organize links">
+            <h2>Other Stuff</h2>
+            <span class="quiet">(recommendations and other personal projects)</span>
+
+            <ul class="tags">
+                <li><a href="/blogroll">People worth Following</a></li>
+                <li><a href="/cooltools">Cool Web Tools</a></li>
+                <li><a>Colophon (coming soon)</a></li>
+                <li><a>Posts worth Reading (coming soon)</a></li>
+            </ul>
+        </div>
 <?php } ?>
 </main>
 <?php get_footer(); ?>
