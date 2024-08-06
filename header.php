@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--responsive goodness-->
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
+    <?php if (is_single() || is_page() ) { ?>
+        <meta property="og:title" content="<?php the_title(); ?>" />
+        <meta property="og:description" content="<?php the_excerpt(); ?>" />
+        <meta property="og:image" content="<?php $post_thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID),'large'); echo $post_thumbnail[0]; ?>" />
+    <?php } ?>
+
 	<?php wp_head(); ?>
 
     <?php if ( is_single('4092') ) { ?>
