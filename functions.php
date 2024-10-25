@@ -31,6 +31,24 @@ add_action( 'pre_get_posts', 'unlimited_archives' );
 
 
 
+
+
+function dequeue_select2_selectwoo() {
+    if ( class_exists( 'woocommerce' ) ) {
+        wp_dequeue_style( 'select2' );
+        wp_deregister_style( 'select2' );
+
+        wp_dequeue_script( 'selectWoo');
+        wp_deregister_script('selectWoo');
+    } 
+}
+add_action( 'wp_enqueue_scripts', 'dequeue_select2_selectwoo', 100 );
+
+
+
+
+add_filter( 'woocommerce_enable_order_notes_field', '__return_false', 9999 );
+
 function errorsea_archive_title( $title ) {
 	if ( is_category() ) {
 		// Remove prefix in category archive page

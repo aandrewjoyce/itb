@@ -1,7 +1,14 @@
 <?php get_header(); ?>
 
 <main>
-    <h2 class="screen-reader-text">Latest Posts</h2>
+<div class="introduction">
+<h1 style="margin-bottom:1px; margin-top:1px; color:var(--quaternary); vertical-align:middle;"><img style="display:inline-block; border-radius:100px; position:relative; top:-8px; vertical-align:middle;" src="https://intothebook.net/wp-content/uploads/2024/10/andrew-2024.jpg" width="100" height="100" /> Hi, I'm Andrew.</h1>
+<p>This is my garden on the web. It's perpetually being tended, sometimes frequently, sometimes sporadically. It is the thing I am most proud of on the web. I'm still trying to figure out the best way to organize everything (the best way ain't reverse-chronologically, but that's how it is for now).</p>
+<p><a href="https://intothebook.net/product/currahee">I wrote a book</a> that I'd love for you to read. The first chapter <a href="https://intothebook.net/chapter-one-mountain/">is available for free</a> and I'd like to put the whole thing online, eventually. I'm married to my beautiful wife and we have two little Zs, with a third on the way.</p>
+<p>I despise the current trajectory of the web (despite being a web developer my entire life), and any use of this site for LLM, SEO, or any other acronym is specifically forbidden. If you're a person, welcome! <a href="mailto:hello@intothebook.net">Email me</a> to say that you read and enjoyed something, or just to say hi. I'd love to hear from you.</p>
+</div>
+
+    <h2>Latest Posts</h2>
 <?php
 	$i = 0;
     if ( have_posts() ) { ?>

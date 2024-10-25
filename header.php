@@ -8,7 +8,7 @@
 
     <?php if (is_single() || is_page() ) { ?>
         <meta property="og:title" content="<?php the_title(); ?>" />
-        <meta property="og:description" content="<?php the_excerpt(); ?>" />
+        <meta name="description" content="<?php the_excerpt(); ?>" />
         <meta property="og:image" content="<?php $post_thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID),'large'); echo $post_thumbnail[0]; ?>" />
     <?php } ?>
 

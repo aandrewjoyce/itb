@@ -1,7 +1,7 @@
 <footer>
     <div class="contact-card h-card" rel="me" href="https://intothebook.net/">
         <h4 class="card-title">Who the heck is <a class="h-card" rel="me" href="https://intothebook.net/">Andrew Joyce</a></h4>
-    <img class="u-photo" src="https://intothebook.net/wp-content/uploads/2022/02/about2020.jpg" width="100" height="100" />
+    <img class="u-photo" src="https://intothebook.net/wp-content/uploads/2024/10/andrew-2024.jpg" width="100" height="100" />
         <p class="p-note">That would be me. I used to run my own web business, Mosaic, but since 2019, I work for <a href="https://www.mereagency.com" rel="dofollow">Mere Agency</a>, and we make the best church websites you've ever seen. I'm a Christian, storyteller, incurable nerd, and I needed a place to put writing on the internet. This is that place: welcome!</p>
 
         <div class="webring">
@@ -14,7 +14,7 @@
         <span title="All the same, please don't monetize any of this writing.">I wrote this, but nobody owns the web.</span>
         <span title="Credit to Li-Chen Wang">All wrongs reserved</span>.<br/>
         <span title="Credit to Cory Doctorow">Privacy policy</span>:
-        we don't collect or retain any data at all.</p>
+        we don't collect or retain data at all (except if you email me to buy a book).</p>
 
 	<?php wp_footer(); ?>
 
